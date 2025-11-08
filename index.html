@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Solutions for Your Business - We provide the best technical services and consulting">
+    <title>Smart Solutions | Innovative Technology Services</title>
+    
+    <!-- Preload Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"> -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <!-- RTL Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <style>
+        /* Fix for RTL form controls */
+        .form-floating>label {
+            right: 0.75rem;
+            left: auto;
+        }
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-control:not(:placeholder-shown)~label,
+        .form-floating>.form-select~label {
+            transform: scale(0.85) translateY(-0.7rem) translateX(-0.15rem);
+        }
+        
+        /* Newsletter Form Styles */
+        .newsletter-form .form-control {
+            color: #fff !important;
+            box-shadow: none !important;
+        }
+        
+        .newsletter-form .form-control::placeholder {
+            color: rgba(255,255,255,0.5) !important;
+            font-size: 0.85rem;
+        }
+        
+        .newsletter-form .form-control:focus {
+            box-shadow: 0 0 0 0.15rem rgba(67, 97, 238, 0.3) !important;
+            border-color: #4361ee !important;
+            background-color: rgba(255,255,255,0.08) !important;
+            outline: none;
+        }
+        
+        .newsletter-form .btn {
+            min-width: 90px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .newsletter-form .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .newsletter-form .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        .newsletter-icon i {
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form:hover .newsletter-icon i {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 767.98px) {
+            .newsletter-form .btn {
+                min-width: 80px;
+                font-size: 0.8rem;
+                padding: 0.25rem 0.5rem;
+            }
+            
+            .newsletter-form .form-control {
+                height: 38px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Meta Tags for Social Media -->
+    <meta property="og:title" content="Smart Solutions | Innovative Technology Services">
+    <meta property="og:description" content="We provide innovative technical solutions for your business success">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://smartsolutions.com">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-lightbulb text-primary me-2"></i>Smart Solutions
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle me-1"></i> About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i> Contact Us</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="#login" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-sign-in-alt me-1"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" dir="ltr">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p class="mb-0">Don't have an account? <a href="#register" class="text-primary">Create new account</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center min-vh-100 py-5">
+                <div class="col-lg-6 order-lg-1 order-2" data-aos="fade-left" data-aos-delay="100">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill">
+                        <i class="fas fa-rocket me-2"></i>We Create Digital Solutions
+                    </span>
+                    <h1 class="display-4 fw-bold mb-4">Innovative Technical Solutions <span class="text-primary">for Your Business Success</span></h1>
+                    <p class="lead mb-5 text-muted">We provide you with the best software solutions and technical consultations to achieve your goals and develop your business in the digital age</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#services" class="btn btn-primary btn-lg px-4">
+                            <i class="fas fa-arrow-right me-2"></i> Explore Our Services
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary btn-lg px-4">
+                            <i class="fas fa-phone me-2"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="position-relative">
+                        <img src="9b84089a-9e08-4165-98ae-ac24320f3966.png" alt="Contact Us" class="img-fluid rounded-4 shadow" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> <br> <br> <br> <br> <br>
+
+    <!-- Features Section -->
+    <section class="py-7 py-lg-8 position-relative" id="features">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill">Why Choose Us</span>
+                    <h2 class="display-5 fw-bold mb-3">Why Choose <span class="text-primary">Smart Solutions</span>?</h2>
+                    <p class="lead text-muted mb-0">We provide you with the best technical solutions with high quality and speed to achieve your goals</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(52, 152, 219, 0.1); color: #3498db;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Fast and Effective Solutions</h3>
+                            <p class="text-muted mb-0">We provide innovative technical solutions that meet your business needs quickly and efficiently, while maintaining the highest standards of quality and performance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(46, 204, 113, 0.1); color: #2ecc70;">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Unmatched Quality</h3>
+                            <p class="text-muted mb-0">We are committed to the highest quality standards in delivering our services, with 100% customer satisfaction guaranteed.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(155, 89, 182, 0.1); color: #9b59b6;">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Integrated Technical Support</h3>
+                            <p class="text-muted mb-0">A technical support team available 24/7 to assist you with any inquiry or issue you may face.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(231, 76, 60, 0.1); color: #e74c3c;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Integrated Protection and Security</h3>
+                            <p class="text-muted mb-0">We provide the highest security and protection standards for your data and your customers' data with advanced encryption.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(241, 196, 15, 0.1); color: #f1c40f;">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Responsive Design</h3>
+                            <p class="text-muted mb-0">All our solutions are designed to be responsive across all screen sizes and devices.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(26, 188, 156, 0.1); color: #1abc9c;">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Smart Analytics & Reports</h3>
+                            <p class="text-muted mb-0">We provide you with accurate reports and integrated dashboards to track your business performance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(52, 73, 94, 0.1); color: #34495e;">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Continuous Updates</h3>
+                            <p class="text-muted mb-0">We provide regular updates to ensure the continued optimal performance of our solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(142, 68, 173, 0.1); color: #8e44ad;">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="h4 mb-3">تخصيص كامل</h3>
+                            <p class="text-muted mb-0">حلول قابلة للتخصيص بالكامل لتتناسب مع احتياجات عملك الفريدة.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm hover-effect">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mb-4" style="background: rgba(189, 195, 199, 0.1); color: #bdc3c7;">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3 class="h4 mb-3">حلول سحابية</h3>
+                            <p class="text-muted mb-0">استفد من تقنيات الحوسبة السحابية لأعلى درجات المرونة والتوفر.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="#contact" class="btn btn-primary btn-lg px-5">
+                    <i class="fas fa-paper-plane me-2"></i> احصل على استشارة مجانية
+                </a>
+            </div>
+        </div>
+        <div class="position-absolute top-0 end-0 w-100 h-100 bg-light opacity-25" style="z-index: -1; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-7 py-lg-8 bg-light position-relative overflow-hidden" id="services">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill">Our Featured Services</span>
+                    <h2 class="display-5 fw-bold mb-3">Integrated <span class="text-primary">Technical Solutions</span> for All Your Needs</h2>
+                    <p class="lead text-muted mb-0">We offer a comprehensive range of technical services to help your business grow and thrive in the digital age</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Web Design Service -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm hover-effect" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="card-body p-4" style="display: flex; flex-direction: column; flex: 1;">
+                            <div class="service-icon mb-4" style="background: rgba(52, 152, 219, 0.1); color: #3498db;">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Website Design</h3>
+                            <p class="text-muted mb-4">Professional website design that's responsive to the latest web standards and delivers an exceptional user experience</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Responsive design for all devices</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Search Engine Optimization (SEO)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Easy and attractive user interface</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> High loading speed</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary w-100" style="margin-top: auto;">
+                                <i class="fas fa-arrow-right me-2"></i>Request Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Apps Service -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card h-100 border-0 shadow-sm hover-effect" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="card-body p-4 position-relative" style="display: flex; flex-direction: column; flex: 1;">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-danger bg-opacity-10 text-danger">Most Popular</span>
+                            </div>
+                            <div class="service-icon mb-4" style="background: rgba(46, 204, 113, 0.1); color: #2ecc70;">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Mobile Applications</h3>
+                            <p class="text-muted mb-4">Innovative mobile app development for iOS and Android with the highest quality standards</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Native and fast applications</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Modern user interface</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Payment systems integration</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Regular updates and maintenance</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-primary w-100" style="margin-top: auto;">
+                                <i class="fas fa-arrow-right me-2"></i>Request Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- E-commerce Service -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm hover-effect" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="card-body p-4" style="display: flex; flex-direction: column; flex: 1;">
+                            <div class="service-icon mb-4" style="background: rgba(155, 89, 182, 0.1); color: #9b59b6;">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3 class="h4 mb-3">E-commerce Stores</h3>
+                            <p class="text-muted mb-4">Integrated solutions for creating and developing successful and profitable online stores</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Multiple electronic payment systems</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Advanced inventory and sales management</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Comprehensive sales analytics</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 24/7 technical support</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary w-100" style="margin-top: auto;">
+                                <i class="fas fa-arrow-right me-2"></i>Request Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Digital Marketing Service -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm hover-effect" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="card-body p-4" style="display: flex; flex-direction: column; flex: 1;">
+                            <div class="service-icon mb-4" style="background: rgba(230, 126, 34, 0.1); color: #e67e22;">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Digital Marketing</h3>
+                            <p class="text-muted mb-4">Innovative marketing solutions to increase your digital presence and attract more customers</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Paid advertising (Google Ads, Social Media)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Search Engine Optimization (SEO)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Social media management</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Performance analytics and monthly reports</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary w-100" style="margin-top: auto;">
+                                <i class="fas fa-arrow-right me-2"></i>Request Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Software Development -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card h-100 border-0 shadow-sm hover-effect" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="card-body p-4" style="display: flex; flex-direction: column; flex: 1;">
+                            <div class="service-icon mb-4" style="background: rgba(142, 68, 173, 0.1); color: #8e44ad;">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Software Development</h3>
+                            <p class="text-muted mb-4">Custom software solutions that precisely meet your business needs with high professionalism</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Custom system development</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Business management solutions</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> System integration</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Continuous maintenance and development</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary w-100" style="margin-top: auto;">
+                                <i class="fas fa-arrow-right me-2"></i>Request Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Branding & Design -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm hover-effect" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="card-body p-4" style="display: flex; flex-direction: column; flex: 1;">
+                            <div class="service-icon mb-4" style="background: rgba(231, 76, 60, 0.1); color: #e74c3c;">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Branding & Design</h3>
+                            <p class="text-muted mb-4">Design a distinctive visual identity that professionally represents your brand</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Professional logo design</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Visual identity guide</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Business cards and stationery design</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Packaging and promotional materials design</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary w-100" style="margin-top: auto;">
+                                <i class="fas fa-arrow-right me-2"></i>Request Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12 text-center" data-aos="fade-up">
+                    <a href="#contact" class="btn btn-outline-primary btn-lg mt-4">
+                        <i class="fas fa-paper-plane me-2"></i> Get a Free Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="position-absolute bottom-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" fill="#fff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-7 py-lg-8 position-relative" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <img src="9b84089a-9e08-4165-98ae-ac24320f3966.png" alt="About Us" class="img-fluid rounded-4 shadow" loading="lazy">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill">About Us</span>
+                    <h2 class="display-5 fw-bold mb-4"><span class="text-primary">Smart Solutions</span> for Technology and Software</h2>
+                    <p class="lead text-muted mb-4">We are a team of professionals and experts in the field of technology and programming, providing innovative technical solutions that meet the needs of our clients in various fields.</p>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="fas fa-rocket fa-2x"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="h4 mb-2">Our Vision</h3>
+                            <p class="text-muted mb-0">To be the first choice for companies and entities seeking digital transformation and the development of integrated technical solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="fas fa-bullseye fa-2x"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="h4 mb-2">Our Mission</h3>
+                            <p class="text-muted mb-0">To provide innovative and high-quality technical solutions that meet our clients' aspirations and help them achieve their goals.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <a href="#contact" class="btn btn-primary btn-lg px-4 me-3">
+                            <i class="fas fa-phone me-2"></i> Contact Us
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-lg px-4">
+                            <i class="fas fa-download me-2"></i> Download Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <br> <br> <br> <br> <br>
+
+    <!-- Contact Section -->
+    <section class="py-7 py-lg-8 bg-light position-relative" id="contact">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill">Contact Us</span>
+                    <h2 class="display-5 fw-bold mb-3">Get in Touch with <span class="text-primary">Our Team</span></h2>
+                    <p class="lead text-muted mb-0">We're here to answer your inquiries and help you find the perfect solution for your needs</p>
+                </div>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="d-flex align-items-start mb-5">
+                                <div class="me-4">
+                                    <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3">
+                                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Address</h5>
+                                    <p class="text-muted mb-0">Riyadh, Saudi Arabia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start mb-5">
+                                <div class="me-4">
+                                    <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3">
+                                        <i class="fas fa-phone-alt fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Call Us</h5>
+                                    <p class="text-muted mb-1">+966 12 345 6789</p>
+                                    <p class="text-muted mb-0">+966 50 123 4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start">
+                                <div class="me-4">
+                                    <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3">
+                                        <i class="far fa-envelope text-primary" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Email Us</h5>
+                                    <p class="text-muted mb-1">info@smartsolutions.com</p>
+                                    <p class="text-muted mb-0">support@smartsolutions.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-5">
+                                <h5 class="mb-3">Follow Us</h5>
+                                <div class="social-links">
+                                    <a href="#" class="social-link me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-link me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-link me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-link me-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
+                    <div class="card border-0 h-100" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border-radius: 15px; overflow: hidden;">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="text-center mb-5">
+                                <div class="position-relative d-inline-block mb-3">
+                                    <div class="position-absolute top-50 start-50 translate-middle bg-primary bg-opacity-10 rounded-circle" style="width: 80px; height: 80px;"></div>
+                                    <div class="position-relative" style="z-index: 2;">
+                                        <i class="fas fa-envelope-open-text text-primary" style="font-size: 2.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h3 class="h2 fw-bold mb-2" style="color: #2c3e50;">Get In Touch</h3>
+                                <p class="text-muted mb-0" style="max-width: 500px; margin: 0 auto;">Have questions or want to discuss a project? Send us a message and we'll get back to you shortly.</p>
+                            </div>
+                            <form id="contactForm" novalidate class="needs-validation">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control form-control-lg bg-white border-2" id="name" placeholder="John Doe" required style="height: 60px; border-radius: 10px; border-color: #e0e0e0; transition: all 0.3s ease;">
+                                            <label for="name" class="text-muted"><i class="far fa-user text-primary" aria-hidden="true"></i>Full Name <span class="text-danger">*</span></label>
+                                            <div class="invalid-feedback">
+                                                Please enter your name
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control form-control-lg bg-white border-2" id="email" placeholder="your@email.com" required style="height: 60px; border-radius: 10px; border-color: #e0e0e0; transition: all 0.3s ease;">
+                                            <label for="email" class="text-muted"><i class="far fa-envelope text-primary" aria-hidden="true"></i>Email Address <span class="text-danger">*</span></label>
+                                            <div class="invalid-feedback">
+                                                Please enter a valid email
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <select class="form-select form-select-lg bg-white border-2" id="subject" required style="height: 60px; border-radius: 10px; border-color: #e0e0e0; padding-top: 0.5rem; transition: all 0.3s ease;">
+                                                <option value="" selected disabled>Select a subject</option>
+                                                <option value="general">General Inquiry</option>
+                                                <option value="support">Technical Support</option>
+                                                <option value="sales">Sales Question</option>
+                                                <option value="partnership">Partnership</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                            <label for="subject" class="text-muted"><i class="fas fa-tag text-primary"></i>Subject <span class="text-danger">*</span></label>
+                                            <div class="invalid-feedback">
+                                                Please select a subject
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control form-control-lg bg-white border-2" id="message" placeholder="Tell us about your project or inquiry..." required style="height: 150px; border-radius: 10px; border-color: #e0e0e0; resize: none; transition: all 0.3s ease;"></textarea>
+                                            <label for="message" class="text-muted"><i class="fas fa-comment-dots text-primary"></i>Your Message <span class="text-danger">*</span></label>
+                                            <div class="invalid-feedback">
+                                                Please enter your message
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="privacyPolicy" required style="width: 1.2em; height: 1.2em; margin-top: 0.2em;">
+                                            <label class="form-check-label small text-muted ms-2" for="privacyPolicy">
+                                                I agree to the <a href="#" class="text-primary text-decoration-none">Privacy Policy</a> and <a href="#" class="text-primary text-decoration-none">Terms of Service</a>
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                You must agree before submitting
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100 py-3 fw-semibold position-relative overflow-hidden" style="border-radius: 10px; transition: all 0.3s ease; background: linear-gradient(45deg, #4361ee, #3a0ca3); border: none; box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);">
+                                            <span class="position-relative" style="z-index: 2;">
+                                                <i class="far fa-user text-primary" aria-hidden="true"></i> Send Message
+                                                <i class="fas fa-spinner fa-spin ms-2 d-none"></i>
+                                            </span>
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-white opacity-0 hover-opacity-10" style="transition: all 0.3s ease;"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-absolute top-0 end-0 w-100 h-100 bg-light opacity-25" style="z-index: -1; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+    </section> <br> <br> <br> <br> 
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-7 pb-4">
+        <div class="container position-relative">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-widget">
+                        <a class="navbar-brand fw-bold mb-4 d-inline-block" href="#" style="color: #fff; font-size: 1.75rem;">
+                            <i class="fas fa-lightbulb me-2" style="color: #4361ee;"></i>Smart Solutions
+                        </a>
+                        <p class="text-muted mb-4">We provide innovative technical solutions that help you develop your business and increase your productivity. We believe that technology should be accessible to everyone.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link me-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-widget">
+                        <h5 class="mb-4">Quick Links</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li><a href="#home"><i class="fas fa-chevron-left me-2"></i>Home</a></li>
+                            <li><a href="#features"><i class="fas fa-chevron-left me-2"></i>Features</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-left me-2"></i>Services</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-left me-2"></i>About Us</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-left me-2"></i>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5 class="mb-4">Our Services</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-left me-2"></i>Web Development</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-left me-2"></i>Mobile Apps</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-left me-2"></i>Graphic Design</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-left me-2"></i>Digital Marketing</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-left me-2"></i>Web Hosting</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5 class="mb-4">Subscribe to Our Newsletter</h5>
+                        <div class="newsletter-box">
+                            <div class="newsletter-icon mb-4 text-center">
+                                <div class="position-relative d-inline-block">
+                                    <div class="position-absolute top-50 start-50 translate-middle bg-primary bg-opacity-10 rounded-circle" style="width: 60px; height: 60px;"></div>
+                                    <i class="fas fa-envelope-open-text text-primary" style="font-size: 1.75rem; position: relative; z-index: 1;"></i>
+                                </div>
+                            </div>
+                            <p class="text-muted text-center mb-4">Subscribe to receive the latest news, offers, and updates directly to your inbox</p>
+                            
+                            <form class="newsletter-form position-relative" id="footerNewsletterForm" onsubmit="return handleNewsletterSubmit(event)">
+                                <div style="display: flex; flex-direction: column; gap: 15px;">
+                                    <input 
+                                        type="email" 
+                                        class="form-control" 
+                                        id="newsletterEmail"
+                                        name="email"
+                                        placeholder="البريد الإلكتروني" 
+                                        aria-label="البريد الإلكتروني" 
+                                        required
+                                        style="
+                                            height: 42px;
+                                            border: 1px solid rgba(255,255,255,0.15);
+                                            background-color: rgba(255,255,255,0.05);
+                                            color: #fff;
+                                            border-radius: 6px !important;
+                                            font-size: 0.9rem;
+                                            padding: 0.375rem 0.75rem;
+                                            transition: all 0.2s ease;
+                                            text-align: right;
+                                            direction: rtl;
+                                            margin: 0;
+                                        "
+                                        onfocus="this.style.borderColor='#4361ee'; this.style.backgroundColor='rgba(255,255,255,0.1)';"
+                                        onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.backgroundColor='rgba(255,255,255,0.05)';"
+                                    >
+                                    <button 
+                                        class="btn btn-primary d-flex align-items-center justify-content-center mt-3" 
+                                        type="submit"
+                                        style="
+                                            height: 40px;
+                                            width: 50%;
+                                            margin: 0 auto;
+                                            border-radius: 6px !important;
+                                            background: linear-gradient(45deg, #4361ee, #3a0ca3);
+                                            border: none;
+                                            font-size: 0.85rem;
+                                            font-weight: 500;
+                                            padding: 0.25rem 0.5rem;
+                                            transition: all 0.2s ease;
+                                            margin: 0 auto;
+                                        "
+                                        onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)';"
+                                        onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)';"
+                                    >
+                                        <i class="fas fa-paper-plane ms-2" style="font-size: 0.9rem;"></i>
+                                        <span>اشترك </span>
+                                    </button>
+                                </div>
+                                <div class="form-text text-white-50 text-center mt-3 small" style="opacity: 0.7; line-height: 1.5;">
+                                    <div><i class="fas fa-lock ms-1"></i> نضمن خصوصيتك</div>
+                                    <div class="mt-1">يمكنك إلغاء الاشتراك في أي وقت</div>
+                                </div>
+                            </form>
+                            
+                            <div class="newsletter-success d-none" id="newsletterSuccess">
+                                <div class="alert alert-success alert-dismissible fade show mb-0 mt-3" role="alert">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle me-2"></i>
+                                        <div>Thank you for subscribing! Please check your email to confirm.</div>
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="mb-3">Download Our App</h6>
+                            <div class="app-buttons">
+                                <a href="#" class="app-btn app-store-btn">
+                                    <i class="fab fa-apple"></i>
+                                    <div class="btn-text">
+                                        <span class="small">Download on the</span>
+                                        <span class="store-name">App Store</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="app-btn play-store-btn">
+                                    <i class="fab fa-google-play"></i>
+                                    <div class="btn-text">
+                                        <span class="small">Get it on</span>
+                                        <span class="store-name">Google Play</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">
+                        &copy; <span id="currentYear">2023</span> Smart Solutions. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-3"><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li class="list-inline-item me-3"><a href="#" class="text-white-50 text-decoration-none">Terms & Conditions</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">Usage Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+            <span class="sr-only">Back to top</span>
+        </a>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Newsletter Form Handler -->
+    <script>
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const emailInput = document.getElementById('newsletterEmail');
+            const successMessage = document.getElementById('newsletterSuccess');
+            
+            // Validate email
+            if (!emailInput.value || !emailInput.validity.valid) {
+                emailInput.style.borderColor = '#dc3545';
+                return false;
+            }
+            
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> جاري الإرسال...';
+            
+            // Simulate API call (replace with actual form submission)
+            setTimeout(() => {
+                // Hide the form
+                form.style.display = 'none';
+                // Show success message
+                successMessage.classList.remove('d-none');
+                // Reset form
+                form.reset();
+                // Re-enable button after 5 seconds
+                setTimeout(() => {
+                    form.style.display = 'block';
+                    successMessage.classList.add('d-none');
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                }, 5000);
+            }, 1500);
+            
+            return false;
+        }
+        
+        // Add input event to reset error state
+        document.getElementById('newsletterEmail').addEventListener('input', function() {
+            if (this.style.borderColor === 'rgb(220, 53, 69)') {
+                this.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+            }
+        });
+    </script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JavaScript File -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
